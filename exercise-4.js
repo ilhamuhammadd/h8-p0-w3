@@ -1,49 +1,55 @@
-function dataHandling2(arr) {
+//contoh output
+// ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"]  
 
-    // console.log(arr)
-    // Soal Splice
-    arr.splice(1, 2, 'Roman Alamsyah Elsharawy', 'Provinsi Bandar Lampung')
-    arr.splice(4, 1, 'Pria', 'SMA Internasional Metro')
-    console.log(arr)
+//     Buatlah sebuah function dengan nama dataHandling2 yang akan menerima input array seperti di atas.
 
-    // Soal Case dan Splite
-    // console.log(arr[3])
-    // var arrSetrip = arr[3].split('/')
-    var arrSplit = arr[3].split('/')
-    var arrCase = arr[3].split('/')
-    switch (arrCase[1]) {
-        case '05': console.log(arrCase[1] = 'Mei'); break;
+//     Gunakan fungsi splice untuk memodifikasi variabel tersebut agar menjadi seperti array dibawah. Lalu console.log array yang baru seperti di bawah.
+
+// ["0001", "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung", "21/05/1989", "Pria", "SMA Internasional Metro"]  
+
+//     Berdasarkan elemen yang berisikan tanggal/bulan/tahun (elemen ke-4), ambil angka bulan dan console.log nama bulan sesuai dengan angka tersebut.
+//         Gunakan split untuk memisahkan antara tanggal, bulan, dan tahun.
+//         Format tanggal pada data adalah dd-mm-YYYY
+//         Misal angka bulan 01, tuliskan "Januari"
+//         Gunakan switch case untuk menuliskan bulan di atas.
+
+//     Pada array hasil split dari tanggal/bulan/tahun, lakukan sorting secara descending dan console.log array yang sudah di-sort.
+
+//     Masih pada array hasil split dari elemen tanggal/bulan/tahun, gabungkan semua elemen menggunakan join dan pisahkan dengan karakter strip (-) lalu console.log hasilnya.
+
+//     Nama (elemen ke-2), harus dibatasi sebanyak 15 karakter saja. Gunakan slice untuk menghapus kelebihan karakter dan console.log nama yang sudah di-slice, sebelum di-slice pastikan Nama (elemen ke-2) sudah dalam bentuk String agar bisa di-slice.
+function dataHandling2(input) {
+    // Soal Menambah/Menghapus Elemen pada Array Menggunakan splice
+    input.splice(1,2,'Roman Alamsyah Elsharawy','Provinsi Bandar Lampung')
+    console.log(input)
+    var angka = input[3].split('/')
+    // console.log(angka[1])
+    // Soal Mengganti Angka Menjadi Bulan
+    switch(angka[1]) {
+        case '05': console.log(angka[1] = 'Mei'); break;
     }
-    // console.log(parseInt(arrSplit[0]))
-    // console.log(parseInt(arrSplit[1]))
-    // console.log(parseInt(arrSplit[2]))
-    // temp = []
-    // for (var i = 0; i < arrSplit.length; i++) {
-    //     temp += parseInt(arrSplit[i])
-    // }
-    // console.log(temp)
-
-    // Soal Sort
-    // console.log(arrSplit)
-    // console.log(arrSplit.sort())
-
-    var arrSort = arrSplit.sort(function(value1, value2) { return value1 < value2 });
-    console.log(arrSort);
-
-    // Soal memasukan setrip pada tanggal/bulan/tahun
-    // console.log(arr)
-    var arrSetrip = arr[3].split('/')
-    console.log(arrSetrip.join('-'))
-
-    //Soal Slice
-    var arrSlice = arr[1].slice(0,15)
-    console.log(arrSlice)
-
+    // Soal Sorting Tanggal Menggunakan Sort
+    var ttl = input[3].split('/')
+    ttl.sort(function(value1, value2) { return Number(value1) < Number(value2) });
+    console.log(ttl)
+    // Soal Join dengan menambahkan string -
+    var joinBulan = input[3].split('/')
+    console.log(joinBulan.join('-'))
+    // Soal Slicc, dengan memberi batas jumlah karakter pada data Nama
+    var sliceNama = input[1].slice(0,15)
+    console.log(sliceNama)
 
 
 }
-var input = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"]
-dataHandling2(input)
+
+
+
+// Test-case
+
+// Untuk memastikan program kamu sudah bekerja dengan benar, gunakan test-case dibawah.
+
+var input = ["0001", "Roman Alamsyah ", "Bandar Lampung", "21/05/1989", "Membaca"];
+dataHandling2(input);
 
 /**
  * keluaran yang diharapkan (pada console)
