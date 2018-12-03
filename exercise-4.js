@@ -26,7 +26,19 @@ function dataHandling2(input) {
     // console.log(angka[1])
     // Soal Mengganti Angka Menjadi Bulan
     switch(angka[1]) {
+        case '01': console.log(angka[1] = 'Januari'); break;
+        case '02': console.log(angka[1] = 'Februari'); break;
+        case '03': console.log(angka[1] = 'Maret'); break;
+        case '03': console.log(angka[1] = 'April'); break;
         case '05': console.log(angka[1] = 'Mei'); break;
+        case '06': console.log(angka[1] = 'Juni'); break;
+        case '07': console.log(angka[1] = 'Juli'); break;
+        case '08': console.log(angka[1] = 'Agustus'); break;
+        case '09': console.log(angka[1] = 'September'); break;
+        case '10': console.log(angka[1] = 'Oktober'); break;
+        case '11': console.log(angka[1] = 'November'); break;
+        case '12': console.log(angka[1] = 'Desember'); break;
+
     }
     // Soal Sorting Tanggal Menggunakan Sort
     var ttl = input[3].split('/')
